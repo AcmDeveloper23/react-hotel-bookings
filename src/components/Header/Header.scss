@@ -1,0 +1,91 @@
+.header {
+    background-color: #fff;
+    height: 7rem;
+    //padding: 2rem;
+    font-size: 1.6rem;
+    border-bottom: .3rem solid var(--color-grey-light-2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 3.25rem;
+    margin: 0 4rem 0 2rem;
+    cursor: pointer;
+}
+
+.header__toggle-btn {
+    cursor: pointer;
+    width: 2.25rem;
+    height: 2.25rem;
+}
+
+.user-nav {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+
+    & > * {
+        padding: 0 2rem;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    & > *:hover {
+        background-color: var(--color-grey-light-2);
+    }
+
+    &__box {
+        position: relative;
+        flex-basis: 1;
+    }
+
+    &__link:link,
+    &__link:visited {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        width: 2.25rem;
+        height: 2.25rem;
+        fill: var(--color-grey-dark-2);
+    }
+
+    &__notification {
+        font-size: .8rem;
+        font-weight: 500;
+        background-color: var(--color-primary);
+        color: #fff;
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 50%;
+        position: absolute;
+        top: 1.35rem;
+        right: 1.1rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .2s;
+    }
+}
+
+.user-acnt__box {
+    
+    //justify-content: center;
+    gap: .6rem;
+
+    &--photo {
+        width: 3.75rem;
+        height: 3.75rem;
+        border-radius: 50%;
+    }
+
+    &--name {
+        margin-right: 2rem;
+    }
+}

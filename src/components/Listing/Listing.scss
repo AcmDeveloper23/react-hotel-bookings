@@ -1,0 +1,16 @@
+.listing {
+    padding: 2rem;
+    position: relative;
+}
+
+.listing__heading {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.listing__cards {
+    padding: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    //align-items: stretch;
+}
