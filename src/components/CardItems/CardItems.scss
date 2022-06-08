@@ -14,14 +14,14 @@
     }
 
     &__text-box {
-        padding: 1.5rem 2rem;
+        padding: 1rem 2rem;
     }
 
     &__title-box {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: .4rem;
+        margin-bottom: .2rem;
     }
 
     &__name {
@@ -32,7 +32,7 @@
 
     &__bookmark {
         cursor: pointer;
-        
+
         &--icon {
             fill: var(--color-primary);
             width: 2.75rem;
@@ -40,11 +40,17 @@
         }
     }
 
+    &__location {
+        display: inline-block;
+        color: var(--color-grey-dark-2);
+        font-size: 1.2rem;
+        margin-bottom: .4rem;
+    }
+
     &__price {
         color: var(--color-primary-dark);
-        font-size: 1.2rem;
-        font-weight: 400;
-        margin-bottom: 2rem;
+        font-size: 1.4rem;
+        font-weight: 500;
     }
 
     &__desc {
@@ -55,7 +61,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 2rem;
+        padding: 1rem;
     }
 
     &__btn,

@@ -5,7 +5,7 @@ import { increment } from "../../redux/features/cart/cartSlice";
 import { Link } from 'react-router-dom';
 import { BsBookmark, BsBookmarkFill} from "react-icons/bs";
 
-const CardItems = ({name, image, price, desc}) => {
+const CardItems = ({name, image, price, city, country}) => {
 
     const [isBookmarked, setIsBookmarked] = useState(false);
 
@@ -45,9 +45,11 @@ const CardItems = ({name, image, price, desc}) => {
                     </div>
                 </div>
 
+                <p className='card__location'>${city}, ${country}</p>
+
                 <p className='card__price'>${price}/day</p> 
                 
-                <p className='card__desc'>{desc}</p>
+                {/* <p className='card__desc'>{desc}</p> */}
             </div>
 
             <div className='card__btn-box'>
