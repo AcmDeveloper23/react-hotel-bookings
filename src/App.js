@@ -4,6 +4,7 @@ import Cart from "./pages/Cart";
 import Bookmarks from "./pages/Bookmarks";
 import Details from "./pages/Details";
 import Hotels from "./pages/Hotels";
+import Login from "./pages/Login";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/bookmarks" element={<Bookmarks />} />
         <Route path="/details/:id" element={<Details />} />
         <Route path="/hotels" element={<Hotels />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   )

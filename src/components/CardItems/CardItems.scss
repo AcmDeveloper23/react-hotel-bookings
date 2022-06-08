@@ -31,7 +31,8 @@
     }
 
     &__bookmark {
-
+        cursor: pointer;
+        
         &--icon {
             fill: var(--color-primary);
             width: 2.75rem;
