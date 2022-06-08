@@ -4,11 +4,10 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 import { Link } from 'react-router-dom';
 import { BsBookmark, BsBookmarkFill} from "react-icons/bs";
-import Assets from '../../assets';
 
 const CardItems = ({hotel}) => {
 
-    const { name, price, city, country} = hotel;
+    const { name, image, price, city, country} = hotel;
 
     const [isBookmarked, setIsBookmarked] = useState(false);
 
@@ -24,7 +23,7 @@ const CardItems = ({hotel}) => {
 
     return (
         <article className='card'>
-            <img src={Assets.Hotel1} alt="Item 1" className='card__img' />
+            <img src={require(`../../assets/img/${image}`)} alt="Item 1" className='card__img' />
 
             {/* <div className="card__bookmark">
                 <BsBookmark className="card__bookmark--icon" />
