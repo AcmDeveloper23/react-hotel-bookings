@@ -1,0 +1,100 @@
+.cart {
+    background-image: linear-gradient(to right bottom, var(--color-primary), var(--color-primary-dark));
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 90vh;
+    position: relative;
+}
+
+.cart-section {
+    background: #fff;
+    max-width: 120rem;
+    width: 100%;
+    min-height: 50rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &__heading {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    &__lists {
+        display: flex;
+        flex-direction: column;
+        padding: 3rem;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        border-bottom: .1rem solid var(--color-grey-light-3);
+
+        &--img {
+            width: 15rem;
+            height: auto;
+        }
+
+        &--text {
+            color: var(--color-grey-dark-1);
+            font-size: 1.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        &--price {
+            font-size: 1.6rem;
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+
+        &--close {
+            width: 2rem;
+            height: 2rem;
+            fill: red;
+            cursor: pointer;
+        }
+    }
+
+    &__quantity {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.8rem;
+
+        &--plus {
+            background-color: var(--color-primary);
+        }
+
+        &--minus {
+            background-color: var(--color-primary-light);
+        }
+
+        &--value {
+            color: var(--color-grey-dark-2);
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+
+    }
+
+    &__btn {
+        cursor: pointer;
+        width: 3.75rem;
+        height: 3.75rem;
+        border: none;
+        outline: none;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 2rem;
+
+        &:hover {
+            background-color: var(--color-primary-dark);
+        }
+    }
+    
+}
