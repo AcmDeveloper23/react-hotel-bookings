@@ -1,7 +1,43 @@
-.home-content {
+.hero-section {
+    background: url('../../assets/img/hero.jpg') no-repeat;
+    background-size: cover;
+    color: #fff;
+    width: 100%;
+    min-height: 90vh;
     display: flex;
-}
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
-.home-container {
-    background-color: aqua;
+    &__text {
+        width: 50%;
+        margin-bottom: 2rem;
+
+        &--heading {
+            font-size: 6rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        &--para {
+            font-size: 1.6rem;
+            font-weight: 300;
+        }
+    }
+
+    &__btn:link,
+    &__btn:visited {
+        text-decoration: none;
+        background-color: var(--color-primary);
+        color: inherit;
+        border: none;
+        padding: 1.5rem 4rem;
+        font-size: 1.6rem;
+        border-radius: 3rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--color-primary-dark);
+        }
+    }
 }

@@ -14,9 +14,9 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li className="menu__list--item">
-                    <Link to="/" className="menu__list--link">
+                    <Link to="/hotels" className="menu__list--link">
                         <ImSpoonKnife className="menu__list--icon" />
-                        <span>Hotel</span>
+                        <span>Hotels</span>
                     </Link>
                 </li>
                 <li className="menu__list--item">
