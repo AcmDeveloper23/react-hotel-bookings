@@ -88,4 +88,14 @@
     &--name {
         margin-right: 2rem;
     }
+
+    &--link {
+        text-decoration: none;
+    }
+
+    &--login {
+        margin-right: 2rem;
+        font-weight: 500;
+        color: var(--color-primary-light);
+    }
 }

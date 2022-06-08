@@ -50,8 +50,11 @@ const Header = () => {
         </div>
 
         <div className='user-acnt__box'>
-          <img src={Assets.UserProfile} alt="User Profile" className='user-acnt__box--photo' />
-          <p className='user-acnt__box--name'>Acm</p>
+          {/* <img src={Assets.UserProfile} alt="User Profile" className='user-acnt__box--photo' />
+          <p className='user-acnt__box--name'>Acm</p> */}
+          <Link className='user-acnt__box--link' to="/login">
+            <p className='user-acnt__box--login'>Login</p>
+          </Link>
         </div>
       </nav>
     </header>
