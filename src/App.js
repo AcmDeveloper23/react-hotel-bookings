@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Bookmarks from "./pages/Bookmarks";
 import Details from "./pages/Details";
+import Hotels from "./pages/Hotels";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/bookmarks" element={<Bookmarks />} />
         <Route path="/details/:id" element={<Details />} />
+        <Route path="/hotels" element={<Hotels />} />
       </Routes>
     </Router>
   )

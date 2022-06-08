@@ -5,7 +5,7 @@ import Layout from "../../components/Layout";
 const Bookmarks = () => {
     return (
         <Layout>
-            <h1>From Bookmarks</h1>
+            <h1>From Bookmarks - Acm</h1>
         </Layout>
     )
 }
