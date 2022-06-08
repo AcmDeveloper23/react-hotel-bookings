@@ -1,7 +1,6 @@
 import React from 'react'
 import "./Listing.scss";
 import CardItems from '../CardItems';
-import Assets from '../../assets';
 
 const Listing = ({hotels}) => {
   return (
@@ -11,12 +10,7 @@ const Listing = ({hotels}) => {
             {hotels.length >= 1 && hotels.map((item, i) => (
               <CardItems 
                 key={item.id} 
-                image={Assets.Hotel1}  
-                name={item.name}
-                city={item.city}
-                country={item.country}
-                price={item.price}
-                desc={item.description}
+                hotel={item}
               />
             ))}
         </div>

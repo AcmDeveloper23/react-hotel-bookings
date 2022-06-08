@@ -8,7 +8,7 @@ import { toggleFunc } from "../../redux/features/sideBar/sideBarSlice"
 
 const Header = () => {
 
-  const cartCount = useSelector((state) => state.cart.value);
+  const cartCount = useSelector((state) => state.cart?.length);
 
   const showSidebar = useSelector((state) => state.sideBarToggle.showSidebar);
 
