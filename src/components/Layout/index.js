@@ -8,7 +8,6 @@ const Layout = ({children}) => {
 
     const showSidebar = useSelector((state) => state.sideBarToggle.showSidebar);
 
-    console.log("Sidebar", showSidebar);
     return (
         <>
             <Header />
