@@ -5,10 +5,14 @@ import { ImCart, ImBookmark, ImMenu, ImCross} from "react-icons/im";
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch} from "react-redux";
 import { toggleFunc } from "../../redux/features/sideBar/sideBarSlice"
+import { cartTotalSelector } from "../../redux/features/cart/cartSelectors";
 
 const Header = () => {
 
-  const cartCount = useSelector((state) => state.cart?.length);
+  // It shows only total length
+  //const cartCount = useSelector((state) => state.cart?.length);
+  // its shows total count based on quantity(roomsBooked)
+  const cartCount = useSelector(cartTotalSelector);
 
   const showSidebar = useSelector((state) => state.sideBarToggle.showSidebar);
 
@@ -39,6 +43,7 @@ const Header = () => {
         <div className='user-nav__box'>
           <Link to="/cart" className='user-nav__link'>
             <ImCart className='user-nav__icon' />
+            {console.log("cartCount", cartCount)}
             {cartCount > 0 && <span className='user-nav__notification'>{cartCount}</span>}
           </Link>
         </div>
