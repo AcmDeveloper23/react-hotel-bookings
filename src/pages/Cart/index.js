@@ -21,8 +21,9 @@ const Cart = () => {
         <div className="cart-section">
           <h1 className="cart-section__heading">Cart</h1>
           <div className="cart-section__lists">
+
             {cartLists.length >= 1 ? cartLists.map((item) => (
-              <div className="cart-section__item">
+              <div key={item.id} className="cart-section__item">
                 <img src={require(`../../assets/img/${item.image}`)} alt={item.name} className="cart-section__item--img" />
 
                 <p className='cart-section__item--text'>{item.name}</p>
@@ -59,7 +60,7 @@ const Cart = () => {
                     <span>Total:</span>
                     ${totalPrice}
                   </p>
-                  <Button url="/" text="Book Now" />
+                  <Button url="" text="Book Now" />
                 </div>
             )}
 
