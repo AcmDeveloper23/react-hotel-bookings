@@ -6,7 +6,7 @@ export const hotelData = [
         country: "South Africa",
         price: 22.2,
         description: "Beau is a boutique, contemporary-styled villa, just off the crest of Constantia Neck in the Southern Suburbs of Cape Town, with splendorous views out over False Bay. The villa is situated on the Beau Constantia wine farm, where you’ll find a wine tasting room and the 5-star Chef’s Warehouse Restaurant. The villa’s open-plan design with wood-panelled finishes, swimming pool, garden area, tennis court and 24/7 security, provides guests with all they’ll need to enjoy a comfortable stay in true luxury.",
-        rooms: 0,
+        roomsBooked: 0,
         image: "beau.webp"
     },
     {
@@ -15,7 +15,7 @@ export const hotelData = [
         city: "Raelingen",
         country: "Norway",
         price: 39.5,
-        rooms: 0,
+        roomsBooked: 0,
         description: "Immerse yourself in the wilderness, still within reach of civilization! WonderINN is literally a hidden gem; the unique design of the mirrored glass blends into the landscape so you can retreat to comfort and luxury as you watch the world pass by.",
         image: "wonder.webp"
     },
@@ -25,7 +25,7 @@ export const hotelData = [
         city: "Twizel",
         country: "New Zealend",
         price: 45,
-        rooms: 0,
+        roomsBooked: 0,
         image: "sky.webp",
         description: "Skylark Cabin is a private, luxury escape, nestled serenely within the awe inspiring landscape of backcountry Ben Ohau."
     },
@@ -35,7 +35,7 @@ export const hotelData = [
         city: "Bali",
         country: "Indonesia",
         price: 22.2,
-        rooms: 0,
+        roomsBooked: 0,
         image: "flow-house.webp",
         description: "Flow House is located in the Penjiwaan Community, it’s a home to artists, surfers, yogis, families and conscious entrepreneurs."
     },
@@ -45,7 +45,7 @@ export const hotelData = [
         city: "Bali",
         country: "Indonesia",
         price: 32,
-        rooms: 0,
+        roomsBooked: 0,
         image: "noku-beach.webp",
         description: "A 30-foot infinity pool reaches toward the sea at this wood-clad villa on Seminyak Beach. A walled garden and attentive staff look onto the scene, with interiors by Alex Zabotto-Bentley adding potted plants, maritime sculptures, "
     },
@@ -55,7 +55,7 @@ export const hotelData = [
         city: "Bolzana",
         country: "South Africa",
         price: 44.2,
-        rooms: 0,
+        roomsBooked: 0,
         image: "mirror.webp",
         description: "The Mirror Houses are a pair of vacation homes, set in the marvellous surroundings of the South Tyrolean Dolomites, amidst a beautiful scenery of apple trees, just outside the city of Bolzano."
     },
@@ -65,7 +65,7 @@ export const hotelData = [
         city: "Wensleydale",
         country: "Australia",
         price: 18,
-        rooms: 0,
+        roomsBooked: 0,
         image: "wesley.webp",
         description: "Set high on the rolling hills of 80 acres The Wensley is a bespoke timber, architectural house & shed built from recycled Oregon and Ironbark. "
     },
@@ -75,7 +75,7 @@ export const hotelData = [
         city: "Lagos",
         country: "Portugal",
         price: 22.2,
-        rooms: 0,
+        roomsBooked: 0,
         image: "luz.webp",
         description: "Set over two levels of palatial splendor, this villa offers a breathtaking view of the Algarve coast and the shining Atlantic beyond. "
     },

@@ -15,15 +15,18 @@ export const cartSlice = createSlice({
                 return state.map((item) => (
                     item.id === id ? {
                         ...item,
-                        rooms: item.rooms + 1
+                        roomsBooked: item.roomsBooked + 1
                     } : item
                 ))
             } else {
                 state.push({
                     ...payload,
-                    rooms: 1
+                    roomsBooked: 1
                 });
             }
+        },
+        removeFromCart: (state, {payload}) => {
+            return state = state.filter((item) => item.id !== payload)
         },
         increment: (state, action) => {
             const { payload } = action;
@@ -31,7 +34,7 @@ export const cartSlice = createSlice({
             return state.map((item) => (
                 item.id === payload ? {
                     ...item,
-                    rooms: item.rooms + 1
+                    roomsBooked: item.roomsBooked + 1
                 } : item
             ))
         },
@@ -39,7 +42,7 @@ export const cartSlice = createSlice({
             return state.map((item) => (
                 item.id === payload ? {
                     ...item,
-                    rooms: item.rooms - 1
+                    roomsBooked: item.roomsBooked - 1
                 } : item
             ))
         },
@@ -49,6 +52,6 @@ export const cartSlice = createSlice({
     }
 })
 
-export const { addToCart, increment, decrement, clear } = cartSlice.actions;
+export const { addToCart, removeFromCart, increment, decrement, clear } = cartSlice.actions;
 
 export default cartSlice.reducer;

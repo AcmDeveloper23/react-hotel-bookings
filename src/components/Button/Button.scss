@@ -1,0 +1,15 @@
+.btn__primary:link,
+.btn__primary:visited {
+    text-decoration: none;
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    padding: 1.5rem 4rem;
+    font-size: 1.6rem;
+    border-radius: 3rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--color-primary-dark);
+    }
+}
