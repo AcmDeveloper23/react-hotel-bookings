@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "./CardItems.scss";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { addToCart, removeFromCart } from "../../redux/features/cart/cartSlice";
 import { addRemoveBookmarks } from "../../redux/features/bookmark/bookmarkSlice";
 import { Link } from 'react-router-dom';
@@ -8,7 +8,10 @@ import { BsBookmark, BsBookmarkFill} from "react-icons/bs";
 
 const CardItems = ({hotel}) => {
 
-    const { name, image, price, city, country, isBookmarked} = hotel;
+    const { id, name, image, price, city, country} = hotel;
+
+    const cartLists = useSelector((state) => state.cart);
+    const bookmarkLists = useSelector((state) => state.bookmark.bookmarkLists);
 
     const [bookmarked, setBookmarked] = useState(false);
 
@@ -25,27 +28,39 @@ const CardItems = ({hotel}) => {
     const addRemoveCart = (checkCart) => {
         setIsCart((cart) => !cart);
         if(checkCart) {
-            dispatch(removeFromCart(hotel.id));
+            dispatch(removeFromCart(id));
         } else {
             dispatch(addToCart(hotel));
         }
     }
 
-    useEffect(() => {
-        if(isBookmarked) {
+    const checkIteminCart = () => {
+        const isAvailable = cartLists.find((item) => item.id === id);
+        if(isAvailable) {
+            setIsCart(true);
+        } else {
+            setIsCart(false);
+        }
+    }
+
+    const checkBookmark = () => {
+        const isAvailable = bookmarkLists.find((item) => item.id === id);
+        if(isAvailable) {
             setBookmarked(true);
         } else {
             setBookmarked(false);
         }
-    },[isBookmarked])
+    }
+
+    useEffect(() => {
+        // For Checking bookmarks and cart
+        checkIteminCart();
+        checkBookmark();
+    },[])
 
     return (
         <article className='card'>
             <img src={require(`../../assets/img/${image}`)} alt={name} className='card__img' />
-
-            {/* <div className="card__bookmark">
-                <BsBookmark className="card__bookmark--icon" />
-            </div> */}
             
             <div className='card__text-box'>
                 <div className='card__title-box'>
