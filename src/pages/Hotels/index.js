@@ -17,7 +17,7 @@ const Hotels = () => {
   return (
     <Layout>
       {hotelData.isLoading && <h1>Loading...</h1>}
-      {hotelData.hotelList?.length >= 1 && <Listing hotels={hotelData.hotelList} />}
+      {hotelData.hotelList?.length >= 1 && <Listing title="Hotels" hotels={hotelData.hotelList} />}
     </Layout>
   )
 }

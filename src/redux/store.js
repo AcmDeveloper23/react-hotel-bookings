@@ -8,7 +8,7 @@ export const store = configureStore({
     reducer: {
         cart: cartReducer,
         sideBarToggle: sideBarReducer,
-        bookmar: bookmarkReducer,
+        bookmark: bookmarkReducer,
         hotels: hotelReducer
     }
 });

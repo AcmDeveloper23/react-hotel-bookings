@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "./CardItems.scss";
 import { useDispatch } from "react-redux";
 import { addToCart, removeFromCart } from "../../redux/features/cart/cartSlice";
+import { addRemoveBookmarks } from "../../redux/features/bookmark/bookmarkSlice";
 import { Link } from 'react-router-dom';
 import { BsBookmark, BsBookmarkFill} from "react-icons/bs";
 
@@ -18,6 +19,7 @@ const CardItems = ({hotel}) => {
 
     const toggleBookmark = () => {
         setIsBookmarked((book) => !book);
+        dispatch(addRemoveBookmarks(hotel));
     }
 
     const addRemoveCart = (checkCart) => {

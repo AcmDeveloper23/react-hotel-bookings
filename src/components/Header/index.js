@@ -13,6 +13,7 @@ const Header = () => {
   //const cartCount = useSelector((state) => state.cart?.length);
   // its shows total count based on quantity(roomsBooked)
   const cartCount = useSelector(cartTotalSelector);
+  const bookmarkCount = useSelector((state) => state.bookmark.bookmarkLists.length);
 
   const showSidebar = useSelector((state) => state.sideBarToggle.showSidebar);
 
@@ -50,7 +51,7 @@ const Header = () => {
         <div className='user-nav__box'>
           <Link to="/bookmarks" className='user-nav__link'>
             <ImBookmark className='user-nav__icon' />
-            <span className='user-nav__notification'>15</span>
+            {bookmarkCount > 0 && <span className='user-nav__notification'>{bookmarkCount}</span>}
           </Link>
         </div>
 
