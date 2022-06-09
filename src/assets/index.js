@@ -7,7 +7,6 @@ import User3 from "./img/user-3.jpg";
 import User4 from "./img/user-4.jpg";
 import User5 from "./img/user-5.jpg";
 import User6 from "./img/user-6.jpg";
-import Hero from "./img/hero.jpg";
 
 const Assets = {
     Logo,
@@ -19,7 +18,6 @@ const Assets = {
     User4,
     User5,
     User6,
-    Hero
 }
 
 export default Assets;
