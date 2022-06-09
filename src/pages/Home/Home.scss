@@ -24,20 +24,4 @@
             font-weight: 300;
         }
     }
-
-    &__btn:link,
-    &__btn:visited {
-        text-decoration: none;
-        background-color: var(--color-primary);
-        color: inherit;
-        border: none;
-        padding: 1.5rem 4rem;
-        font-size: 1.6rem;
-        border-radius: 3rem;
-        cursor: pointer;
-
-        &:hover {
-            background-color: var(--color-primary-dark);
-        }
-    }
 }

@@ -98,3 +98,24 @@
     }
     
 }
+
+.empty-msg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    &__icon {
+        width: 12rem;
+        height: 12rem;
+        fill: var(--color-primary);
+    }
+
+    &__text {
+        font-size: 2.2rem;
+        font-weight: 500;
+        color: var(--color-primary-light);
+        margin-bottom: 2rem;
+    }
+}
