@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./CardItems.scss";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../redux/features/cart/cartSlice";
+import { addToCart, removeFromCart } from "../../redux/features/cart/cartSlice";
 import { Link } from 'react-router-dom';
 import { BsBookmark, BsBookmarkFill} from "react-icons/bs";
 
@@ -11,10 +11,22 @@ const CardItems = ({hotel}) => {
 
     const [isBookmarked, setIsBookmarked] = useState(false);
 
+    const [isCart, setIsCart] = useState(false);
+
+
     const dispatch = useDispatch();
 
     const toggleBookmark = () => {
         setIsBookmarked((book) => !book);
+    }
+
+    const addRemoveCart = (checkCart) => {
+        setIsCart((cart) => !cart);
+        if(checkCart) {
+            dispatch(removeFromCart(hotel.id));
+        } else {
+            dispatch(addToCart(hotel));
+        }
     }
 
     /* const derementCart = () => {
@@ -51,7 +63,12 @@ const CardItems = ({hotel}) => {
             </div>
 
             <div className='card__btn-box'>
-                <button onClick={() => dispatch(addToCart(hotel))} className='card__btn card__btn--cart'>Add to cart</button>
+                <button 
+                    onClick={() => addRemoveCart(isCart)} 
+                    className='card__btn card__btn--cart'
+                >
+                    {isCart ? "Remove" : "Add to Cart"}
+                </button>
                 <Link to={`/details/1`}  className='card__btn card__btn--details'>View Details</Link>
             </div>
 

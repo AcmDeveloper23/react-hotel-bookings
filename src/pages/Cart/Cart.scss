@@ -119,3 +119,27 @@
         margin-bottom: 2rem;
     }
 }
+
+.cart__total {
+    margin-top: 2rem;
+    display:  flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+
+    &--price {
+        font-size: 2rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-primary-light);
+
+        & span {
+            display: inline-block;
+            color: var(--color-grey-dark-1);
+            margin-right: 1rem;
+        }
+    }
+}

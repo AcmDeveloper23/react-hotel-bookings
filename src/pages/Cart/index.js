@@ -6,10 +6,13 @@ import { GiShoppingCart } from "react-icons/gi";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement, removeFromCart} from "../../redux/features/cart/cartSlice"
 import Button from '../../components/Button';
+import { cartTotalPriceSelector } from "../../redux/features/cart/cartSelectors";
 
 const Cart = () => {
 
   const cartLists = useSelector((state) => state.cart);
+  const totalPrice = useSelector(cartTotalPriceSelector);
+
   const dispatch = useDispatch();
 
   const showEmptyMessage = () => (
@@ -51,6 +54,16 @@ const Cart = () => {
               </div>
             )) : (
               showEmptyMessage()
+            )}
+
+            {cartLists.length >= 1 && (
+                <div className='cart__total'>
+                  <p className='cart__total--price'>
+                    <span>Total:</span>
+                    ${totalPrice}
+                  </p>
+                  <Button url="/" text="Book Now" />
+                </div>
             )}
 
 
