@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./CardItems.scss";
 import { useDispatch } from "react-redux";
 import { addToCart, removeFromCart } from "../../redux/features/cart/cartSlice";
+import { addRemoveBookmarks } from "../../redux/features/bookmark/bookmarkSlice";
 import { Link } from 'react-router-dom';
 import { BsBookmark, BsBookmarkFill} from "react-icons/bs";
 
 const CardItems = ({hotel}) => {
 
-    const { name, image, price, city, country} = hotel;
+    const { name, image, price, city, country, isBookmarked} = hotel;
 
-    const [isBookmarked, setIsBookmarked] = useState(false);
+    const [bookmarked, setBookmarked] = useState(false);
 
     const [isCart, setIsCart] = useState(false);
 
@@ -17,7 +18,8 @@ const CardItems = ({hotel}) => {
     const dispatch = useDispatch();
 
     const toggleBookmark = () => {
-        setIsBookmarked((book) => !book);
+        setBookmarked((book) => !book);
+        dispatch(addRemoveBookmarks(hotel));
     }
 
     const addRemoveCart = (checkCart) => {
@@ -29,9 +31,13 @@ const CardItems = ({hotel}) => {
         }
     }
 
-    /* const derementCart = () => {
-        dispatch(decrement());
-    } */
+    useEffect(() => {
+        if(isBookmarked) {
+            setBookmarked(true);
+        } else {
+            setBookmarked(false);
+        }
+    },[isBookmarked])
 
     return (
         <article className='card'>
@@ -47,7 +53,7 @@ const CardItems = ({hotel}) => {
                         {name}
                     </p>
                     <div onClick={toggleBookmark} className="card__bookmark">
-                        {isBookmarked ? (
+                        {bookmarked ? (
                             <BsBookmarkFill className="card__bookmark--icon" />
                         ) : (
                             <BsBookmark className="card__bookmark--icon" />

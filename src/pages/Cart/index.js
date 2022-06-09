@@ -2,11 +2,11 @@ import React from 'react'
 import Layout from '../../components/Layout'
 import "./Cart.scss";
 import { ImCross } from "react-icons/im";
-import { GiShoppingCart } from "react-icons/gi";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement, removeFromCart} from "../../redux/features/cart/cartSlice"
 import Button from '../../components/Button';
 import { cartTotalPriceSelector } from "../../redux/features/cart/cartSelectors";
+import EmptyMsg from '../../components/EmptyMsg';
 
 const Cart = () => {
 
@@ -14,14 +14,6 @@ const Cart = () => {
   const totalPrice = useSelector(cartTotalPriceSelector);
 
   const dispatch = useDispatch();
-
-  const showEmptyMessage = () => (
-    <div className="empty-msg">
-      <GiShoppingCart className="empty-msg__icon" />
-      <h2 className="empty-msg__text">Your Cart is Currently Empty!</h2>
-      <Button url="hotels" text="Return to Hotels" />
-    </div>
-  )
 
   return (
     <Layout>
@@ -53,7 +45,12 @@ const Cart = () => {
 
               </div>
             )) : (
-              showEmptyMessage()
+              <EmptyMsg 
+                text="Your Cart is Currently Empty!" 
+                checkType="Cart"
+                url="hotels"
+                btnText="Return to Hotels"
+              />
             )}
 
             {cartLists.length >= 1 && (
