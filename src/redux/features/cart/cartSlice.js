@@ -20,6 +20,7 @@ export const cartSlice = createSlice({
                     } : item
                 ))
             } else {
+                // add to the cart
                 state.push({
                     ...payload,
                     roomsBooked: 1
