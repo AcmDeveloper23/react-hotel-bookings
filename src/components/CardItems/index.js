@@ -8,32 +8,38 @@ import { BsBookmark, BsBookmarkFill} from "react-icons/bs";
 
 const CardItems = ({hotel}) => {
 
+    // Destructuring the hotel values
     const { id, name, image, price, city, country} = hotel;
 
+    // Cart Data
     const cartLists = useSelector((state) => state.cart);
+    // Bookmark Data
     const bookmarkLists = useSelector((state) => state.bookmark.bookmarkLists);
 
     const [bookmarked, setBookmarked] = useState(false);
-
     const [isCart, setIsCart] = useState(false);
-
 
     const dispatch = useDispatch();
 
+    // Toggle Add/remove Bookmark Functionality
     const toggleBookmark = () => {
         setBookmarked((book) => !book);
         dispatch(addRemoveBookmarks(hotel));
     }
 
+    // Toggle Add/Remove Cart functionality
     const addRemoveCart = (checkCart) => {
         setIsCart((cart) => !cart);
+        // Is item is present in cart, then remove from the cart
         if(checkCart) {
             dispatch(removeFromCart(id));
         } else {
+            // add to the cart
             dispatch(addToCart(hotel));
         }
     }
 
+    // For Checking item present in Cart list or not
     const checkIteminCart = () => {
         const isAvailable = cartLists.find((item) => item.id === id);
         if(isAvailable) {
@@ -43,6 +49,7 @@ const CardItems = ({hotel}) => {
         }
     }
 
+    // For Checking item present in Bookmark list or not
     const checkBookmark = () => {
         const isAvailable = bookmarkLists.find((item) => item.id === id);
         if(isAvailable) {

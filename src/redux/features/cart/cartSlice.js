@@ -11,6 +11,7 @@ export const cartSlice = createSlice({
 
             const itemFound = state.find((item) => item.id === id);
 
+            // If item found, then update the quantity(roomsBooked) else push
             if(itemFound) {
                 return state.map((item) => (
                     item.id === id ? {
@@ -19,6 +20,7 @@ export const cartSlice = createSlice({
                     } : item
                 ))
             } else {
+                // add to the cart
                 state.push({
                     ...payload,
                     roomsBooked: 1
