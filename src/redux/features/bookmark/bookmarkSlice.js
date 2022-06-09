@@ -13,7 +13,11 @@ export const bookmarkSlice = createSlice({
             const isAvailable = state.bookmarkLists.find((item) => item.id === id);
 
             if(isAvailable) {
-                return state.bookmarkLists.filter((item) => item.id !== id);
+                const results = state.bookmarkLists.filter((item) => item.id !== id) || [];
+                return {
+                    ...state,
+                    bookmarkLists: results
+                }
             } else {
                 state.bookmarkLists.push({
                     ...payload,
@@ -21,6 +25,15 @@ export const bookmarkSlice = createSlice({
                 })
             }
         },
+        checkBookmark: (state, {payload}) => {
+            const { id } = payload;
+            const isAvailable = state.bookmarkLists.find((item) => item.id === id);
+
+            if(isAvailable) {
+                return true;
+            } 
+            return false;
+        }
     }
 })
 
