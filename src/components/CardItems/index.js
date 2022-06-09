@@ -23,7 +23,7 @@ const CardItems = ({hotel}) => {
 
     return (
         <article className='card'>
-            <img src={require(`../../assets/img/${image}`)} alt="Item 1" className='card__img' />
+            <img src={require(`../../assets/img/${image}`)} alt={name} className='card__img' />
 
             {/* <div className="card__bookmark">
                 <BsBookmark className="card__bookmark--icon" />
