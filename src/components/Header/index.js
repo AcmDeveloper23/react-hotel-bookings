@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch} from "react-redux";
 import { toggleFunc } from "../../redux/features/sideBar/sideBarSlice"
 import { cartTotalSelector } from "../../redux/features/cart/cartSelectors";
+import SearchBar from '../SearchBar';
 
 const Header = () => {
 
@@ -39,6 +40,8 @@ const Header = () => {
         : (
         <ImMenu className='header__toggle-btn' onClick={toggleSidebarMenu} />)}
       </div>
+
+      <SearchBar />
 
       <nav className='user-nav'>
         <div className='user-nav__box'>
