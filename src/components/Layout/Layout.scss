@@ -1,9 +1,21 @@
 .layout-content {
-    display: flex;
+    //display: flex;
+    display: grid;
+    grid-template-columns: 24rem 1fr;
+}
+
+.collapse {
+    transform: all 2s;
+    grid-template-columns: 0 1fr;
 }
 
 .layout-container {
     background-color: var(--color-grey-light-3);
-    width: 100%;
+    width: 100%; 
+    padding: 1rem 2rem;
+
+    @media (max-width: 600px) {
+        padding: 0;
+    }
 }
 
